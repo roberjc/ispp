@@ -75,8 +75,17 @@
 							<li><a href='shop_checkout.html'><span>Checkout</span></a></li>
 							<li><a href='shop_login.html'><span>Login</span></a></li>
 						</ul></li>
-					<li class='last'><a href='contact.html'><span>Contact
-								Us</span></a></li>
+						
+						
+					<security:authorize access="isAnonymous()">
+	       		 		<li class='has-sub'><a href="security/login.do"><span><spring:message code="master.page.login" /></span></a>
+	        		</security:authorize>
+					<security:authorize access="isAuthenticated()">
+							<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /></span></a>
+								<ul>
+									<li><a href="j_spring_security_logout"> <spring:message code="master.page.logout" /></a></li>
+							</ul></li>
+					</security:authorize>
 				</ul>
 			</div>
 		</div>
