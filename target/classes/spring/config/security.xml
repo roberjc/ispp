@@ -57,6 +57,7 @@
 		<security:intercept-url pattern="/cart/purchaser/**" access="hasRole('PURCHASER')" /> 
 		<security:intercept-url pattern="/order/purchaser/**" access="hasRole('PURCHASER')" /> 
 		<security:intercept-url pattern="/orderLine/purchaser/**" access="hasRole('PURCHASER')" /> 
+		<security:intercept-url pattern="/artist/purchaser/list.do" access="hasRole('PURCHASER')" /> 
 
 		<security:intercept-url pattern="/profile/action-1.do" access="isAuthenticated()" /> 
 		<security:intercept-url pattern="/profile/action-2.do" access="isAuthenticated()" /> 
@@ -68,6 +69,7 @@
 		<security:intercept-url pattern="/profit/administrator/list.do" access="hasRole('ADMINISTRATOR')" />
 		<security:intercept-url pattern="/profit/administrator/create.do" access="hasRole('ADMINISTRATOR')" />
 		<security:intercept-url pattern="/profit/administrator/edit.do" access="hasRole('ADMINISTRATOR')" />
+		<security:intercept-url pattern="dashboard/admin/dashboard.do" access="hasRole('ADMINISTRATOR')" />
 		
 
 

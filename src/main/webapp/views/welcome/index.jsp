@@ -183,6 +183,14 @@
 	        					 <security:authorize access="isAuthenticated()">
 								<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /></span></a>
 								<ul>
+									<security:authorize access="hasRole('PURCHASER')">
+										<li><a href="artwork/purchaser/list.do"> <spring:message code="master.page.purchaser.purchases" /></a></li>
+										<li><a href="review/purchaser/list.do"> <spring:message code="master.page.purchaser.reviews" /></a></li>
+									</security:authorize>
+									<security:authorize access="hasRole('ADMINISTRATOR')">
+										<li><a href="dashboard/admin/dashboard.do"> <spring:message code="master.page.dashboard" /></a></li>
+									</security:authorize>
+								
 									<li><a href="j_spring_security_logout"> <spring:message code="master.page.logout" /></a></li>
 								</ul></li>
 								</security:authorize>
