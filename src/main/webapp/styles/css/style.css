@@ -3429,6 +3429,16 @@ opacity:1 !important;
 	transition: 0.5s;
 }
 
+#message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#inner-message {
+    margin: 0 auto;
+}
+
 }
 
 
