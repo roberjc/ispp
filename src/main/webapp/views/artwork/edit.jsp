@@ -24,7 +24,7 @@
 		r = m1 + (m1 * m2) + (m1 * m3);
 
 		cost = roundToTwo(r);
-		document.getElementById("resultado").innerHTML = r+" euros";
+		document.getElementById("resultado").innerHTML = r + " euros";
 	}
 
 	function roundToTwo(num) {
@@ -53,33 +53,25 @@
 
 						<div class="row">
 							<div class="col-md-6">
-								<acme:textbox code="artwork.title" path="title"
-									placeholder="Name*" />
-								<acme:textbox code="artwork.discipline" path="discipline"
-									placeholder="Email Address*" />
-									
-									
-									<form:label path="discipline">
+
+								<form:label path="title">
+									<spring:message code="artwork.title" />
+								</form:label>
+								<input id="title" placeholder="Name*" required="required" type="text">
+								<form:errors cssClass="error" path="title" />
+
+								<form:label path="discipline">
 									<spring:message code="artwork.discipline" />
 								</form:label>
-								<form:input path="discipline" />
+								<input id="discipline" placeholder="Name*" required="required" type="text">
 								<form:errors cssClass="error" path="discipline" />
 								
-								<div id="message">
-    <div style="padding: 5px;">
-        <div id="inner-message" class="alert alert-error">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            test error message
-        </div>
-    </div>
-</div>
-
-									
-									<form:label path="tags">
+								<form:label path="tags">
 									<spring:message code="artwork.tags.edit" />
 								</form:label>
 								<form:input path="tags" />
 								<form:errors cssClass="error" path="tags" />
+								
 							</div>
 							<div class="col-md-6">
 								<acme:textbox code="artwork.heigth" path="height"
@@ -123,8 +115,12 @@
 				</div>
 				<aside class="col-md-3">
 					<div class="side-widget contact-info">
-						<h4><spring:message code="artwork.total.cost.with.tax" /></h4>
-						<h1><div id="resultado">Esperando precio</div></h1>
+						<h4>
+							<spring:message code="artwork.total.cost.with.tax" />
+						</h4>
+						<h1>
+							<div id="resultado">Esperando precio</div>
+						</h1>
 					</div>
 				</aside>
 			</div>

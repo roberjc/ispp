@@ -24,17 +24,14 @@
 
 	<!-- Main content -->
 	<div class="page-wrap container shop-form-wrap">
-		<h3>Login</h3>
-
 		<!-- Shop Content -->
 		<div role="main" class="main shop">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="row featured-boxes">
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<div class="featured-box default">
 								<div class="box-content">
-									<h4 class="review-head">I'm a Returning Customer</h4>
 									<div class="space20"></div>
 									<form id="contactForm">
 										<div class="row">
@@ -52,7 +49,6 @@
 										<div class="row">
 											<div class="form-group">
 												<div class="col-md-12">
-													<a class="pull-right" href="#">(Lost Password?)</a>
 													<form:label path="password">
 														<spring:message code="security.password" />
 													</form:label>

@@ -11,7 +11,7 @@
 			<!-- Logo -->
 			<h1 class="logo">
 				<a href="index.html"><img src="images/logo.png"
-					class="img-responsive" alt="img" width="150" height="150" /></a>
+					class="img-responsive" alt="img" /></a>
 			</h1>
 
 			<!-- Nav Menu -->
@@ -80,3 +80,6 @@
 	</div>
 </header>
 <!-- Header -->
+<br /><br />
+
+<div class="space30"></div>
