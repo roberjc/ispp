@@ -19,68 +19,76 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <form:form action="j_spring_security_check" modelAttribute="credentials">
 
 	<!-- Main content -->
 	<div class="page-wrap container shop-form-wrap">
+
 		<!-- Shop Content -->
-		<div role="main" class="main shop">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="row featured-boxes">
-						<div class="col-md-12">
-							<div class="featured-box default">
-								<div class="box-content">
-									<div class="space20"></div>
-									<form id="contactForm">
-										<div class="row">
-											<div class="form-group">
-												<div class="col-md-12">
-													<form:label path="username">
-														<spring:message code="security.username" />
-													</form:label>
-													<form:input path="username" cssClass="form-control" />
-													<form:errors class="error" path="username" />
-													<br />
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="form-group">
-												<div class="col-md-12">
-													<form:label path="password">
-														<spring:message code="security.password" />
-													</form:label>
-													<form:password path="password" cssClass="form-control" />
-													<form:errors class="error" path="password" />
-													<br />
-												</div>
-											</div>
-										</div>
-										<div class="row">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row featured-boxes">
+					<div class="col-md-6">
+						<div class="featured-box default">
+							<div class="box-content">
+								<h4 class="review-head">I'm a returning user</h4>
+								<div class="space20"></div>
+								<form id="contactForm">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-12">
-												<input type="submit"
-													value="<spring:message code="security.login" />"
-													class="btn btn-primary btn-orange uppercase pull-right" />
+												<acme:textbox code="security.username"
+													cssClass="form-control" path="username" />
 											</div>
 										</div>
-									</form>
-
-									<jstl:if test="${showError == true}">
-										<div class="error">
-											<spring:message code="security.login.failed" />
+									</div>
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-12">
+												<acme:textbox code="security.password"
+													cssClass="form-control" path="password" />
+											</div>
 										</div>
-									</jstl:if>
-
-									<jstl:if test="${param.result == 'success'}">
-										<div class="success">
-											<br />
-											<spring:message code="customer.success.register" />
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<input type="submit"
+												value="<spring:message code="security.login" />"
+												class="btn btn-primary btn-green uppercase pull-right" />
 										</div>
-									</jstl:if>
-
-								</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<br />
+						<jstl:if test="${showError == true}">
+							<div class="error">
+								<spring:message code="security.login.failed" />
+							</div>
+						</jstl:if>
+						<br />
+						<jstl:if test="${param.result == 'success'}">
+							<div class="success">
+								<br />
+								<spring:message code="customer.success.register" />
+							</div>
+						</jstl:if>
+						<br />
+					</div>
+					<div class="col-md-3"></div>
+					<div class="col-md-3">
+						<div class="featured-box default">
+							<div class="box-content">
+								<h4 class="review-head">Register An Account</h4>
+								<div class="space20"></div>
+								<p>
+									<a href="artist/register.do">&rarr; Register as an artist</a>
+								</p>
+								<p>
+									<a href="purchaser/register.do">&rarr; Register as a purchaser</a>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -89,7 +97,5 @@
 		</div>
 	</div>
 	<!-- Main content -->
-
-
 
 </form:form>

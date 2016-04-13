@@ -37,6 +37,7 @@
 		<security:intercept-url pattern="/security/login.do" access="permitAll" /> 
 		<security:intercept-url pattern="/security/loginFailure.do" access="permitAll" /> 
 		<security:intercept-url pattern="/welcome/index.do" access="permitAll" /> 
+		<security:intercept-url pattern="/about.do" access="permitAll" /> 
 		
 		<security:intercept-url pattern="/artist/register.do" access="permitAll" />
 		<security:intercept-url pattern="/artist/edit.do" access="permitAll" />

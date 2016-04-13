@@ -68,18 +68,6 @@
 
 <div class="container">
 
-	<div class="page-wrap container">
-			<div class="col-lg-12">
-			<form action="${keywordURI}" method="get">
-			<div class="input-group custom-search-form">
-					<input type="text" class="form-control" name="keyword" /> <input
-						class="btn btn-primary btn-xs btn-green uppercase" type="submit"
-						value="<spring:message code="artwork.keyword"/>" />
-						</div>
-				</form>
-        </div>
-	</div>
-
 	<security:authorize access="hasRole('ARTIST')">
 		<display:table name="artworks" id="row" requestURI="${requestURI}"
 			pagesize="5" class="table table-striped table-condensed">
@@ -157,6 +145,7 @@
 
 
 	<security:authorize access="hasRole('PURCHASER')">
+
 		<!-- Main content -->
 		<div class="page-wrap container">
 
@@ -164,12 +153,17 @@
 			<div role="main" class="main shop">
 				<div class="row">
 					<div class="col-md-12">
-						<!-- 						<div class="row"> -->
-						<!-- 							<div class="col-md-6"> -->
-						<!-- 								<p>Showing 1-9 of 25 results.</p> -->
-						<!-- 							</div> -->
-
-						<!-- 						</div> -->
+						<div class="row">
+							<div class="col-md-12">
+								<form action="${keywordURI}" method="get">
+									<div class="input-group stylish-input-group">
+										<input type="text" class="form-control" name="keyword"
+											placeholder="<spring:message code="artwork.keyword"></spring:message>"> <span class="input-group-addon"><button
+												type="submit"><i class="fa fa-search"></i></button></span>
+									</div>
+								</form>
+							</div>
+						</div>
 						<div class="space20"></div>
 						<div class="row">
 							<div id="freewall" class="free-wall">

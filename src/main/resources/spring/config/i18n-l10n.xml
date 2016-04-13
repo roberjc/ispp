@@ -43,6 +43,7 @@
 		<value>/views/artwork/messages</value>
 		<value>/views/tax/messages</value>
 		<value>/views/profit/messages</value>
+		<value>/views/about/messages</value>
 	</util:list>
 
 </beans>

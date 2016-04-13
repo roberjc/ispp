@@ -2,6 +2,7 @@ package services;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -27,7 +28,7 @@ public class ReviewService {
 	// Supporting services
 	@Autowired
 	private PurchaserService purchaserService;
-	
+
 	// Constructors
 
 	public ReviewService() {
@@ -39,8 +40,8 @@ public class ReviewService {
 	public Review create() {
 		checkPurchaserRole();
 		Review res = new Review();
-		int purchaserId=LoginService.getPrincipal().getId();
-		Purchaser purchaser=purchaserService.findOneByUserId(purchaserId);
+		int purchaserId = LoginService.getPrincipal().getId();
+		Purchaser purchaser = purchaserService.findOneByUserId(purchaserId);
 		res.setPurchaser(purchaser);
 		return res;
 	}
@@ -56,35 +57,40 @@ public class ReviewService {
 	}
 
 	public void save(Review review) {
-		checkPurchaserRole(); 	
+		checkPurchaserRole();
 		reviewRepository.save(review);
 	}
 
 	public void delete(Review review) {
 		reviewRepository.delete(review);
-		}
-
-	
+	}
 
 	// Other business methods
-	
-	public Collection<Review> findReviewsOfPurchaser(int purchaserId){
+
+	public Collection<Review> findReviewsOfPurchaser(int purchaserId) {
 		checkAdminRole();
-		Collection<Review> res=new ArrayList<Review>();
-		res=reviewRepository.findReviewsOfPurchaser(purchaserId);
+		Collection<Review> res = new ArrayList<Review>();
+		res = reviewRepository.findReviewsOfPurchaser(purchaserId);
 		return res;
 	}
-	
-	public Collection<Review> findMyReviews(){
+
+	public Collection<Review> findMyReviews() {
 		checkPurchaserRole();
-		Collection<Review> res=new ArrayList<Review>();
-		res=reviewRepository.findMyReviews(LoginService.getPrincipal().getId());
+		Collection<Review> res = new ArrayList<Review>();
+		res = reviewRepository.findMyReviews(LoginService.getPrincipal().getId());
 		return res;
 	}
 
-	
-	// All checks----------------------------------------------------------
+	public List<Integer> getRatingNumbers() {
+		List<Integer> res = new ArrayList<Integer>();
 
+		for (int i = 0; i <= 10; i++)
+			res.add(i);
+
+		return res;
+	}
+
+	// All checks----------------------------------------------------------
 
 	public void checkAdminRole() {
 

@@ -91,34 +91,7 @@
 						</div>
 					</div>
 				</div>
-				<br /> <br />
-				<div class="row featured-boxes">
-					<div class="col-md-6">
-						<div class="featured-box default">
-							<div class="box-content">
-								<h4>Cart Totals</h4>
-								<table class="cart-totals">
-									<tbody>
-										<tr class="cart-subtotal">
-											<th><strong>Cart Subtotal</strong></th>
-											<td><strong><span class="amount"><jstl:out
-															value="${totalCost}"></jstl:out></span></strong></td>
-										</tr>
-										<tr class="shipping">
-											<th>Shipping</th>
-											<td><jstl:out value="${totalCost}"></jstl:out></td>
-										</tr>
-										<tr class="total">
-											<th><strong>Order Total</strong></th>
-											<td><strong><span class="amount"><jstl:out
-															value="${totalCost}"></jstl:out></span></strong></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
+				<br />
 				<div class="row featured-boxes">
 					<div class="col-md-12">
 						<div class="actions-continue">
@@ -127,7 +100,7 @@
 								<jstl:if test="${!(empty artworks)}">
 
 									<a href="order/purchaser/create.do"> <input
-										class="btn btn-primary btn-lg btn-green uppercase"
+										class="btn btn-primary btn-green uppercase pull-right"
 										type="button" name="checkout"
 										value="<spring:message code="cart.purchaser.order" />" />
 									</a>

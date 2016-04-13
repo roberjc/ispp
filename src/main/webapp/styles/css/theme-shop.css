@@ -36,8 +36,8 @@ div.tabs ul.nav-tabs {
 div.tabs ul.nav-tabs li.active a {
 	background: #FFF;
 	border: 0;
-	border-top: 3px solid #e74c3c;
-	color: #e74c3c;
+	border-top: 3px solid #47823B;
+	color: #47823B;
 	border-radius:6px !important;
 	-webkit-transition: all 0s ease-in-out;
 	-moz-transition: all 0s ease-in-out;
@@ -52,7 +52,7 @@ div.tabs ul.nav-tabs a {
 	border: 1px solid #EEE;
 	border-bottom: 0;
 	border-radius: 6px 6px 0 0;
-	color: #e74c3c !important;
+	color: #47823B !important;
 	margin-right: 1px;
 	padding: 15px 25px;
 	-webkit-transition: all 0s ease-in-out;
@@ -253,7 +253,7 @@ div.shop .quantity {
 
 div.shop .quantity .minus,
 div.shop .quantity .plus {
-	background: #E96546;
+	background: #65BC54;
 	border: 1px solid #C8BFC6;
 	border-radius: 2px;
 	box-shadow: none;
@@ -393,13 +393,13 @@ div.shop .cart-totals tr.total .amount {
 }
 
 div.shop div.products div.product .onsale {
-	background-color: #e96546;
-	border-bottom-color: #dd4036;
+	background-color: #65BC54;
+	border-bottom-color: #47823B;
 }
 
 div.shop .star-rating span,
 div.shop .cart-totals tr.total .amount {
-	color: #e96546;
+	color: #65BC54;
 }
 
 
@@ -837,7 +837,7 @@ ul.comments li a {
 
 
 .review-head {
-    color: #e96546;
+    color: #65BC54;
     font-size: 1.4em;
     font-weight: 400;
     letter-spacing: normal;
@@ -854,7 +854,7 @@ label {
 }
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-    border: 1px solid #f37d61;
+    border: 1px solid #47823B;
 }
 
 .img-thumbnail {

@@ -247,16 +247,10 @@
 		<!-- Slider1 -->
 		<div class="slider-content container">
 			<div id="carousel">
-				<a href="#"><img src="images/demo/slider/1.jpg" id="item-1"
-					alt="img" /></a> <a href="#"><img src="images/demo/slider/2.jpg"
-					id="item-2" alt="img" /></a> <a href="#"><img
-					src="images/demo/slider/3.jpg" id="item-3" alt="img" /></a> <a
-					href="#"><img src="images/demo/slider/11.jpg" id="item-4"
-					alt="img" /></a> <a href="#"><img src="images/demo/slider/10.jpg"
-					id="item-5" alt="img" /></a> <a href="#"><img
-					src="images/demo/slider/5.jpg" id="item-6" alt="img" /></a> <a
-					href="#"><img src="images/demo/slider/6.jpg" id="item-7"
+				<jstl:forEach items="${artworks}" var="artwork" >
+				<a href="#"><img src="artwork/show.do?artworkId=${artwork.id}" width="50%" height="70%"
 					alt="img" /></a>
+				</jstl:forEach>
 			</div>
 			<div class="scroll-btns">
 				<a href="#" id="s-prev">Prev</a> | <a href="#" id="s-next">Next</a>

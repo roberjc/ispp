@@ -25,6 +25,7 @@
 <%@ attribute name="path" required="true" %>
 <%@ attribute name="code" required="true" %>
 <%@ attribute name="placeholder" required="false" %>
+<%@ attribute name="cssClass" required="false" %>
 
 <%@ attribute name="readonly" required="false" %>
 
@@ -38,6 +39,6 @@
 	<form:label path="${path}">
 		<spring:message code="${code}" />
 	</form:label>	
-	<form:input path="${path}" readonly="${readonly}" placeholder="${placeholder}"/>	
+	<form:input path="${path}" readonly="${readonly}" cssClass="${cssClass}" placeholder="${placeholder}"/>	
 	<form:errors path="${path}" cssClass="error" />
 </div>	

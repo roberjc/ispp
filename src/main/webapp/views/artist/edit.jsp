@@ -18,42 +18,129 @@
 	<form:hidden path="artist.reviews" />
 	<form:hidden path="artist.artworks" />
 
-	<fieldset>
+	<!-- Main content -->
+	<div class="page-wrap container shop-form-wrap">
 
-		<acme:textbox code="artist.username"
-			path="artist.userAccount.username" />
-		<acme:password code="artist.password"
-			path="artist.userAccount.password" />
-		<acme:password code="artist.password.repeat" path="checkPassword" />
-	</fieldset>
-	
-	<fieldset>
-		<acme:textbox code="artist.name" path="artist.name" />
-		<acme:textbox code="artist.surname" path="artist.surname" />
-		<acme:textbox code="artist.email" path="artist.email" />
-		<acme:textbox code="artist.phone" path="artist.phone" />
-	</fieldset>
-	
-	<fieldset>
-		<acme:textbox code="artist.birthDate" path="artist.birthDate" />
-		<acme:textbox code="artist.nationality" path="artist.nationality" />
-		<acme:textbox code="artist.address" path="artist.address" />
-		<acme:textbox code="artist.url" path="artist.URL" />
-	</fieldset>
+		<!-- Shop Content -->
+		<div role="main" class="main shop checkout-wrap">
 
-	<br />
+			<div class="row">
+				<div class="col-md-12">
+					<div class="toggle-content">
+						<form>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-12">
+										<h4>User account</h4>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6">
+										<acme:textbox code="artist.username"
+											path="artist.userAccount.username" cssClass="form-control" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6">
+										<acme:password code="artist.password"
+											path="artist.userAccount.password" cssClass="form-control" />
+									</div>
+									<div class="col-md-6">
+										<acme:password code="artist.password.repeat"
+											path="checkPassword" cssClass="form-control" />
+									</div>
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-12">
+										<h4>Artist info</h4>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6">
+										<acme:textbox code="artist.name" path="artist.name"
+											cssClass="form-control" />
+									</div>
+									<div class="col-md-6">
+										<acme:textbox code="artist.surname" path="artist.surname"
+											cssClass="form-control" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6">
+										<acme:textbox code="artist.email" path="artist.email"
+											cssClass="form-control" />
+									</div>
+									<div class="col-md-6">
+										<acme:textbox code="artist.phone" path="artist.phone"
+											cssClass="form-control" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6">
+										<acme:textbox code="artist.birthDate" path="artist.birthDate"
+											cssClass="form-control" />
+									</div>
+									<div class="col-md-6">
+										<acme:textbox code="artist.nationality"
+											path="artist.nationality" cssClass="form-control" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6">
+										<acme:textbox code="artist.address" path="artist.address"
+											cssClass="form-control" />
+									</div>
+									<div class="col-md-6">
+										<acme:textbox code="artist.url" path="artist.URL"
+											cssClass="form-control" />
+									</div>
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6">
+										<span class="remember-box checkbox"> <acme:checkbox
+												path="conditions" url="privacy/lopd-lssi.do"
+												code="customer.terms" /></span>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- end of first -->
+					<div class="space40"></div>
 
-	<acme:checkbox path="conditions" url="privacy/lopd-lssi.do"
-		code="customer.terms" />
-
-	<br />
-
-	<jstl:if test="${showError == true}">
-		<div class="error">
-			<spring:message code="customer.error.register" />
+					<div class="actions-continue">
+						<input type="submit"
+							class="btn btn-primary btn-green uppercase pull-right"
+							name="save"
+							value="<spring:message code="customer.create"></spring:message>" />
+					</div>
+				</div>
+				<jstl:if test="${showError == true}">
+					<div class="error">
+						<spring:message code="customer.error.register" />
+					</div>
+				</jstl:if>
+			</div>
 		</div>
-	</jstl:if>
+	</div>
+	<!-- Main content -->
 
-	<acme:submit name="save" code="customer.create" />
-	<acme:cancel url="welcome/index.do" code="customer.back" />
 </form:form>

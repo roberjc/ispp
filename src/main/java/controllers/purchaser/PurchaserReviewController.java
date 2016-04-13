@@ -146,11 +146,13 @@ public class PurchaserReviewController extends AbstractController {
 		ModelAndView result;
 
 		Collection<Artist> artists=artistService.findAll();
+		Collection<Integer> ratings = reviewService.getRatingNumbers();
 		
 		result = new ModelAndView("review/purchaser/create");
 		result.addObject("review", review);
 		result.addObject("message", message);
 		result.addObject("artists", artists);
+		result.addObject("ratings", ratings);
 		return result;
 	}
 

@@ -293,7 +293,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #e96546;
+  color: #65BC54;
   text-decoration: none;
 }
 a:focus {
@@ -3516,8 +3516,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:focus {
   color: #fff;
   cursor: default;
-  background-color: #e96546;
-  border: 1px solid #e96546;
+  background-color: #65BC54;
+  border: 1px solid #65BC54;
   border-bottom-color: transparent;
 }
 .nav-tabs.nav-justified {
@@ -3637,7 +3637,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .tab-content > .active {
   display: block;
-  background:#e96546;
+  background:#65BC54;
   color:#fff;
 padding:15px 23px;
 }

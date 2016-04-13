@@ -13,8 +13,6 @@
 <input type="hidden" id="profitNumber" value="${ profitNumber}" />
 <input type="hidden" id="taxNumber" value="${ taxNumber}" />
 
-
-
 <script>
 	function totalPrice() {
 		m1 = parseFloat(document.getElementById("price").value);
@@ -54,24 +52,12 @@
 						<div class="row">
 							<div class="col-md-6">
 
-								<form:label path="title">
-									<spring:message code="artwork.title" />
-								</form:label>
-								<input id="title" placeholder="Name*" required="required" type="text">
-								<form:errors cssClass="error" path="title" />
+								<acme:textbox code="artwork.title" path="title" />
 
-								<form:label path="discipline">
-									<spring:message code="artwork.discipline" />
-								</form:label>
-								<input id="discipline" placeholder="Name*" required="required" type="text">
-								<form:errors cssClass="error" path="discipline" />
-								
-								<form:label path="tags">
-									<spring:message code="artwork.tags.edit" />
-								</form:label>
-								<form:input path="tags" />
-								<form:errors cssClass="error" path="tags" />
-								
+								<acme:textbox code="artwork.discipline" path="discipline" />
+
+								<acme:textbox code="artwork.tags.edit" path="tags" />
+
 							</div>
 							<div class="col-md-6">
 								<acme:textbox code="artwork.heigth" path="height"
