@@ -20,7 +20,5 @@
 		<put-attribute name="title" value="Mi carrito" />
 		<put-attribute name="body" value="/views/cart/purchaser/list.jsp" />
 	</definition>
-
-
 	
 </tiles-definitions>

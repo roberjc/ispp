@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
@@ -73,7 +74,7 @@
 					<!--  PURCHASER NAV  -->
 					<security:authorize access="hasRole('PURCHASER')">
 						<li class='last'><a href="artwork/purchaser/listInCart.do"><span><spring:message
-										code="master.page.purchaser.cart" /></span></a></li>
+										code="master.page.purchaser.cart" />(<jstl:out value="${cart.artworks.size()}"></jstl:out>)</span></a></li>
 					</security:authorize>
 
 					<!--  Anonymous NAV  -->

@@ -21,7 +21,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import domain.Artwork;
+import domain.Cart;
+import security.Authority;
+import security.LoginService;
 import services.ArtworkService;
+import services.CartService;
 
 @Controller
 @RequestMapping("/welcome")
@@ -29,6 +33,9 @@ public class WelcomeController extends AbstractController {
 
 	@Autowired
 	ArtworkService artworkService;
+
+	@Autowired
+	CartService cartService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -53,6 +60,15 @@ public class WelcomeController extends AbstractController {
 		result.addObject("name", name);
 		result.addObject("moment", moment);
 		result.addObject("artworks", artworks);
+
+		if (LoginService.hasPrincipal() == true) {
+			//if (LoginService.getPrincipal().getAuthorities().toArray()[0].equals(Authority.PURCHASER) ) {
+				Cart cart;
+
+				cart = cartService.findMyCart();
+				result.addObject("cart", cart);
+			}
+		//}
 
 		return result;
 	}
