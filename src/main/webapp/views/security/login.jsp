@@ -47,7 +47,7 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-12">
-												<acme:textbox code="security.password"
+												<acme:password code="security.password"
 													cssClass="form-control" path="password" />
 											</div>
 										</div>

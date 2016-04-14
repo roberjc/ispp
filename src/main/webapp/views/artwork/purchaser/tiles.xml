@@ -17,18 +17,18 @@
 <tiles-definitions>
 
 	<definition name="artwork/purchaser/list" extends="master.page">	
-		<put-attribute name="title" value="My shopping" />
+		<put-attribute name="title" value="My orders" />
 		<put-attribute name="body" value="/views/artwork/purchaser/list.jsp" />
 	</definition>
 	
 	<definition name="artwork/purchaser/listInCart" extends="master.page">	
-		<put-attribute name="title" value="Objects of the cart" />
+		<put-attribute name="title" value="Cart" />
 		<put-attribute name="body" value="/views/artwork/purchaser/list.jsp" />
 	</definition>
 	
 
 	<definition name="artwork/purchaser/listOnSale" extends="master.page">	
-		<put-attribute name="title" value="Objects on sale" />
+		<put-attribute name="title" value="Artworks" />
 		<put-attribute name="body" value="/views/artwork/list.jsp" />
 	</definition>
 </tiles-definitions>

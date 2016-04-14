@@ -182,7 +182,7 @@
 
 															<a
 																href="cart/purchaser/addToCart.do?artworkId=${artwork.id}">
-																<span class="onsale">Sale!</span>
+																<span class="onsale"><img src="images/cart.png" width="25px" height="25px" style="margin-left: 7px; margin-top: 8px" /></span>
 															</a> <span class="thumb-info"> <a
 																href="artwork/display.do?artworkId=${artwork.id}"> <span
 																	class="thumb-info-image"> <span
@@ -194,7 +194,7 @@
 																		src="artwork/show.do?artworkId=${artwork.id}">
 																</span>
 															</a> <span class="thumb-info-content"> <a
-																	href="shop-product-sidebar.html">
+																	href="artwork/display.do?artworkId=${artwork.id}">
 																		<h4>
 																			<jstl:out value="${artwork.title}"></jstl:out>
 																		</h4>

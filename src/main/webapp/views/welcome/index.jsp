@@ -68,12 +68,14 @@
 <link id="three" rel="stylesheet" href="#">
 <script type="text/javascript" src="styles/styles-box/script.js"></script>
 
-<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
-<%@taglib prefix="jstl"	uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
 
@@ -82,59 +84,16 @@
 
 	<!-- STYLES -->
 	<div id="stylesBox">
-		<a href="#" class="contact">STYLES</a>
+		<a href="#" class="contact"></a>
 		<div class="stylesBack">
-
-			<p>Layout Style</p>
-			<a class="boxed1" href="indexb28e.html?theme=boxed1" title="boxed">boxed</a>
-			:: <a class="boxed2" href="indexc286.html?theme=boxed2"
-				title="not boxed">not boxed</a>
-
-			<p>Main Background Pattern</p>
+			<p>
+				<spring:message code="master.page.chooseLanguage" />
+			</p>
 			<div class="pattern-links">
-				<a class="colorbox back21" href="indexa51f.html?theme=back21"
-					title="Background"></a> <a class="colorbox back22"
-					href="indexc525.html?theme=back22" title="Background"></a> <a
-					class="colorbox back23" href="index4cc5.html?theme=back23"
-					title="Background"></a> <a class="colorbox back24"
-					href="indexcc72.html?theme=back24" title="Background"></a> <a
-					class="colorbox back25" href="indexf825.html?theme=back25"
-					title="Background"></a> <a class="colorbox back1"
-					href="indexe818.html?theme=back1" title="Background"></a> <a
-					class="colorbox back2" href="index7fb3.html?theme=back2"
-					title="Background"></a> <a class="colorbox back3"
-					href="indexfeb1.html?theme=back3" title="Background"></a> <a
-					class="colorbox back4" href="index7cb1.html?theme=back4"
-					title="Background"></a> <a class="colorbox back5"
-					href="index6b45.html?theme=back5" title="Background"></a> <a
-					class="colorbox back6" href="index132a.html?theme=back6"
-					title="Background"></a> <a class="colorbox back7"
-					href="index9bca.html?theme=back7" title="Background"></a> <a
-					class="colorbox back8" href="index1bd4.html?theme=back8"
-					title="Background"></a> <a class="colorbox back9"
-					href="indexe446.html?theme=back9" title="Background"></a> <a
-					class="colorbox back10" href="index864b.html?theme=back10"
-					title="Background"></a> <a class="colorbox back11"
-					href="index0454.html?theme=back11" title="Background"></a> <a
-					class="colorbox back12" href="index8242.html?theme=back12"
-					title="Background"></a> <a class="colorbox back13"
-					href="indexef26.html?theme=back13" title="Background"></a> <a
-					class="colorbox back14" href="index02f5.html?theme=back14"
-					title="Background"></a> <a class="colorbox back15"
-					href="index000c.html?theme=back15" title="Background"></a> <a
-					class="colorbox back16" href="index23f4.html?theme=back16"
-					title="Background"></a> <a class="colorbox back17"
-					href="indexbc8a.html?theme=back17" title="Background"></a> <a
-					class="colorbox back18" href="indexc7bc.html?theme=back18"
-					title="Background"></a> <a class="colorbox back19"
-					href="indexdf9a.html?theme=back19" title="Background"></a> <a
-					class="colorbox back20" href="indexbf4e.html?theme=back20"
-					title="Background"></a>
-
+				<a href="?language=es"><span><img src="images/es.png"
+						class="img-responsive" /></span></a> <a href="?language=en"><span><img
+						src="images/en.png" class="img-responsive" /></span></a>
 			</div>
-
-			<a href="#" id="resetButton">Reset Styles</a>
-
 		</div>
 	</div>
 	<!-- STYLES -->
@@ -149,90 +108,96 @@
 
 					<!-- Logo -->
 					<h1 class="logo">
-						<a href=""><img src="images/logo.png"
-							class="img-responsive" alt="img" /></a>
+						<a href=""><img src="images/logo.png" class="img-responsive"
+							alt="img" /></a>
 					</h1>
 
 					<!-- Nav Menu -->
 					<div id='cssmenu'>
 						<ul>
-					<li class='has-sub active'><a href=""><span><spring:message code="master.page.home" /></span></a>
-						<ul>
-						</ul>
-					</li>
-				
-					<li class='has-sub active'><a href='about.do'><span><spring:message code="master.page.aboutus" /></span></a>
-						<ul>
-						</ul>
-					</li>
-					
-					<li class='has-sub'><a href="artwork/purchaser/listOnSale.do"><span><spring:message code="master.page.artworks" /></span></a>
-						<ul>
-						</ul>
-					</li>
-						
-					<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a>
-						<ul>
-						</ul>
-					</li>
-						
-<!-- 						 ADMIN NAV  -->
-<%-- 					<security:authorize access="hasRole('ADMINISTRATOR')"> --%>
-						
-<%-- 						<li class='has-sub'><a href="#"><span><spring:message code="master.page.artworks" /></span></a> --%>
-<!-- 							<ul> -->
-<%-- 							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.onsale" /></a></li> --%>
-<%-- 							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.sold" /></a></li> --%>
-<!-- 							</ul> -->
-<!-- 						</li> -->
-						
-<%-- 						<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a> --%>
-<!-- 							<ul> -->
-<!-- 							</ul> -->
-<!-- 						</li> -->
-<%-- 						<li class='has-sub'><a href="purchaser/administrator/list.do"><span><spring:message code="master.page.purchasers" /></span></a> --%>
-<!-- 							<ul> -->
-<!-- 							</ul> -->
-<!-- 						</li> -->
-						
-<%-- 	        		</security:authorize> --%>
-						
+							<li class='last'><a href=""><span><spring:message
+											code="master.page.home" /></span></a></li>
 
-					<!--  PURCHASER NAV  -->
-					<security:authorize access="hasRole('PURCHASER')">
-						<li class='has-sub'><a href="artwork/purchaser/listInCart.do"><span><spring:message code="master.page.purchaser.cart" /></span></a>
-							<ul>
-							</ul>
-						</li>
-	        		</security:authorize>
-						
-					<!--  Anonymous NAV  -->
-					<security:authorize access="isAnonymous()">
-	       		 		<li class='has-sub'><a href="security/login.do"><span><spring:message code="master.page.login" /> <i class="icon-enter5"></i></span></a>
-	        		</security:authorize>
-	        		
-	        		<!--  Authenticated NAV  -->
-					<security:authorize access="isAuthenticated()">
-						<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /> <i class="icon-user2"></i></span></a>
+							<li class='last'><a href='about.do'><span><spring:message
+											code="master.page.aboutus" /></span></a></li>
+
+							<li class='last'><a href="artwork/purchaser/listOnSale.do"><span><spring:message
+											code="master.page.artworks" /></span></a></li>
+
+							<li class='last'><a href="artist/list.do"><span><spring:message
+											code="master.page.artist.list" /></span></a></li>
+
+							<!-- 						 ADMIN NAV  -->
+							<%-- 					<security:authorize access="hasRole('ADMINISTRATOR')"> --%>
+
+							<%-- 						<li class='has-sub'><a href="#"><span><spring:message code="master.page.artworks" /></span></a> --%>
+							<!-- 							<ul> -->
+							<%-- 							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.onsale" /></a></li> --%>
+							<%-- 							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.sold" /></a></li> --%>
+							<!-- 							</ul> -->
+							<!-- 						</li> -->
+
+							<%-- 						<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a> --%>
+							<!-- 							<ul> -->
+							<!-- 							</ul> -->
+							<!-- 						</li> -->
+							<%-- 						<li class='has-sub'><a href="purchaser/administrator/list.do"><span><spring:message code="master.page.purchasers" /></span></a> --%>
+							<!-- 							<ul> -->
+							<!-- 							</ul> -->
+							<!-- 						</li> -->
+
+							<%-- 	        		</security:authorize> --%>
+
+
+							<!--  PURCHASER NAV  -->
+							<security:authorize access="hasRole('PURCHASER')">
+								<li class='last'><a href="artwork/purchaser/listInCart.do"><span><spring:message
+												code="master.page.purchaser.cart" /></span></a></li>
+							</security:authorize>
+
+							<!--  Anonymous NAV  -->
+							<security:authorize access="isAnonymous()">
+								<li class='last'><a href="security/login.do"><span><spring:message
+												code="master.page.login" /> <i class="icon-enter5"></i></span></a>
+							</security:authorize>
+
+							<!--  Authenticated NAV  -->
+							<security:authorize access="isAuthenticated()">
+								<li class='has-sub'><a href='#'><span><security:authentication
+												property="principal.username" /> <i class="icon-user"></i></span></a>
 									<ul>
-									<security:authorize access="hasRole('PURCHASER')">
-										<li><a href="purchaser/edit.do?purchaserId=<security:authentication property="principal.id" />"> <spring:message code="master.page.profile" /></a></li>
-										<li><a href="artwork/purchaser/list.do"> <spring:message code="master.page.purchaser.orders" /></a></li>
-										<li><a href="review/purchaser/list.do"> <spring:message code="master.page.purchaser.reviews" /></a></li>
-									</security:authorize>
-									
-									<security:authorize access="hasRole('ARTIST')">
-										<li><a href="artist/edit.do?artistId=<security:authentication property="principal.id" />"> <spring:message code="master.page.profile" /></a></li>
-										<li><a href="artwork/artist/myList.do"> <spring:message code="master.page.artist.myartworks" /></a></li>
-										<li><a href="artwork/artist/create.do"> <spring:message code="master.page.artist.uploadartwork" /></a></li>
-										<li><a href="order/artist/list.do"> <spring:message code="master.page.artist.myorders" /></a></li>
-										<li><a href="reviews/artist/list.do"> <spring:message code="master.page.artist.myreviews" /></a></li>
-									</security:authorize>
-									
-									<li><a href="j_spring_security_logout"><spring:message code="master.page.logout" /> <i class="icon-exit3"></i></a></li>
-							</ul></li>
-					</security:authorize>
-				</ul>
+										<security:authorize access="hasRole('PURCHASER')">
+											<li><a
+												href="purchaser/edit.do?purchaserId=<security:authentication property="principal.id" />">
+													<spring:message code="master.page.profile" />
+											</a></li>
+											<li><a href="artwork/purchaser/list.do"> <spring:message
+														code="master.page.purchaser.orders" /></a></li>
+											<li><a href="review/purchaser/list.do"> <spring:message
+														code="master.page.purchaser.reviews" /></a></li>
+										</security:authorize>
+
+										<security:authorize access="hasRole('ARTIST')">
+											<li><a
+												href="artist/edit.do?artistId=<security:authentication property="principal.id" />">
+													<spring:message code="master.page.profile" />
+											</a></li>
+											<li><a href="artwork/artist/myList.do"> <spring:message
+														code="master.page.artist.myartworks" /></a></li>
+											<li><a href="artwork/artist/create.do"> <spring:message
+														code="master.page.artist.uploadartwork" /></a></li>
+											<li><a href="order/artist/list.do"> <spring:message
+														code="master.page.artist.myorders" /></a></li>
+											<li><a href="reviews/artist/list.do"> <spring:message
+														code="master.page.artist.myreviews" /></a></li>
+										</security:authorize>
+
+										<li><a href="j_spring_security_logout"> <spring:message
+													code="master.page.logout" /> <i class="icon-exit3"></i></a></li>
+									</ul></li>
+							</security:authorize>
+
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -243,13 +208,13 @@
 		<!-- Slider1 -->
 		<div class="slider-content container">
 			<div id="carousel">
-				<jstl:forEach items="${artworks}" var="artwork" >
-				<a href="#"><img src="artwork/show.do?artworkId=${artwork.id}" width="50%" height="70%"
-					alt="img" /></a>
+				<jstl:forEach items="${artworks}" var="artwork">
+					<a href="#"><img src="artwork/show.do?artworkId=${artwork.id}"
+						width="50%" height="70%" alt="img" /></a>
 				</jstl:forEach>
 			</div>
 			<div class="scroll-btns">
-				<a href="#" id="s-prev">Prev</a>  <a href="#" id="s-next">Next</a>
+				<a href="#" id="s-prev">Prev</a> <a href="#" id="s-next">Next</a>
 			</div>
 		</div>
 		<!-- Slider1 -->

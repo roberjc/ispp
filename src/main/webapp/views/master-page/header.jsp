@@ -7,13 +7,30 @@
 
 <!-- Header -->
 <header>
+
+	<!-- STYLES -->
+	<div id="stylesBox">
+		<a href="#" class="contact"></a>
+		<div class="stylesBack">
+			<p>
+				<spring:message code="master.page.chooseLanguage" />
+			</p>
+			<div class="pattern-links">
+				<a href="?language=es"><span><img src="images/es.png"
+						class="img-responsive" /></span></a> <a href="?language=en"><span><img
+						src="images/en.png" class="img-responsive" /></span></a>
+			</div>
+		</div>
+	</div>
+	<!-- STYLES -->
+
 	<div class="container">
 		<div class="col-md-12">
 
 			<!-- Logo -->
 			<h1 class="logo">
-				<a href="index.html"><img src="images/logo.png"
-					class="img-responsive" alt="img" width="150" height="150" /></a>
+				<a href=""><img src="images/logo.png" class="img-responsive"
+					alt="img" /></a>
 			</h1>
 
 			<!-- Nav Menu -->
@@ -56,20 +73,19 @@
 					<!--  PURCHASER NAV  -->
 					<security:authorize access="hasRole('PURCHASER')">
 						<li class='last'><a href="artwork/purchaser/listInCart.do"><span><spring:message
-										code="master.page.purchaser.cart" /></span></a>
-						</li>
+										code="master.page.purchaser.cart" /></span></a></li>
 					</security:authorize>
 
 					<!--  Anonymous NAV  -->
 					<security:authorize access="isAnonymous()">
 						<li class='last'><a href="security/login.do"><span><spring:message
-										code="master.page.login" /></span></a>
+										code="master.page.login" /> <i class="icon-enter5"></i></span></a>
 					</security:authorize>
 
 					<!--  Authenticated NAV  -->
 					<security:authorize access="isAuthenticated()">
 						<li class='has-sub'><a href='#'><span><security:authentication
-										property="principal.username" /></span></a>
+										property="principal.username" /> <i class="icon-user"></i></span></a>
 							<ul>
 								<security:authorize access="hasRole('PURCHASER')">
 									<li><a
@@ -98,12 +114,14 @@
 								</security:authorize>
 
 								<li><a href="j_spring_security_logout"> <spring:message
-											code="master.page.logout" /></a></li>
+											code="master.page.logout" /> <i class="icon-exit3"></i></a></li>
 							</ul></li>
 					</security:authorize>
+
 				</ul>
 			</div>
 		</div>
 	</div>
+	<br /> <br />
 </header>
 <!-- Header -->
