@@ -98,7 +98,7 @@
 
 	<div class="body">
 		<jstl:if
-			test="${req != '//views/misc/index.jsp' && req != '/dashboard/admin/dashboard.do'}">
+			test="${req != '//views/misc/index.jsp' && !req.contains('/dashboard/admin/')}">
 			<div class="top-wrap">
 				<div class="overlay-bg"></div>
 				<tiles:insertAttribute name="header" />
@@ -106,7 +106,7 @@
 		</jstl:if>
 
 		<jstl:if
-			test="${req != '//views/misc/index.jsp' && req != '/dashboard/admin/dashboard.do'}">
+			test="${req != '//views/misc/index.jsp' && !req.contains('/dashboard/admin/')}">
 			<div class="page-wrap container shop-form-wrap">
 				<br />
 				<br />
@@ -123,7 +123,7 @@
 			<span class="message"><spring:message code="${message}" /></span>
 		</jstl:if>
 
-		<jstl:if test="${req != '/dashboard/admin/dashboard.do'}">
+		<jstl:if test="${!req.contains('/dashboard/admin/')}">
 			<tiles:insertAttribute name="footer" />
 		</jstl:if>
 	</div>

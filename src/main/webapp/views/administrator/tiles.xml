@@ -16,19 +16,39 @@
        
 <tiles-definitions>
 
-	<definition name="administrator/action-1" extends="master.page">	
-		<put-attribute name="title" value="Administrator: Action 1" />
-		<put-attribute name="body" value="/views/administrator/action-1.jsp" />
-	</definition>
-	
-	<definition name="administrator/action-2" extends="master.page">	
-		<put-attribute name="title" value="Administrator: Action 2" />
-		<put-attribute name="body" value="/views/administrator/action-2.jsp" />
-	</definition>
-	
 	<definition name="administrator/dashboard" extends="master.page">	
-		<put-attribute name="title" value="Dashboard" />
+		<put-attribute name="title" value="Panel de control" />
 		<put-attribute name="body" value="/views/administrator/dashboard.jsp" />
+	</definition>
+	
+	<definition name="administrator/home" extends="master.page">	
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="body" value="/views/administrator/home.jsp" />
+	</definition>
+	
+	<definition name="administrator/artists" extends="master.page">	
+		<put-attribute name="title" value="Artistas" />
+		<put-attribute name="body" value="/views/administrator/artists.jsp" />
+	</definition>
+	
+	<definition name="administrator/purchasers" extends="master.page">	
+		<put-attribute name="title" value="Compradores" />
+		<put-attribute name="body" value="/views/administrator/purchasers.jsp" />
+	</definition>
+	
+	<definition name="administrator/onSaleArtworks" extends="master.page">	
+		<put-attribute name="title" value="Obras en venta" />
+		<put-attribute name="body" value="/views/administrator/onSaleArtworks.jsp" />
+	</definition>
+	
+	<definition name="administrator/soldArtworks" extends="master.page">	
+		<put-attribute name="title" value="Obras vendidas" />
+		<put-attribute name="body" value="/views/administrator/soldArtworks.jsp" />
+	</definition>
+	
+	<definition name="administrator/orders" extends="master.page">	
+		<put-attribute name="title" value="Pedidos" />
+		<put-attribute name="body" value="/views/administrator/orders.jsp" />
 	</definition>
 	
 </tiles-definitions>

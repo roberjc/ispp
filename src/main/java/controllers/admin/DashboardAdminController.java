@@ -27,10 +27,10 @@ public class DashboardAdminController extends AbstractController {
 
 	@Autowired
 	private PurchaserService purchaserService;
-	
+
 	@Autowired
 	private ArtworkService artworkService;
-	
+
 	@Autowired
 	private OrderService orderService;
 
@@ -39,13 +39,11 @@ public class DashboardAdminController extends AbstractController {
 		super();
 	}
 
-	// Listing-----------------------------------------------------------------
-	
-	
-	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
-	public ModelAndView list() {
+	// Home menu -----------------------------------------------
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public ModelAndView home() {
 		ModelAndView result;
-		String requestURI;
+
 		Collection<Artist> highestRateArtists;
 		Double numberHighestRateArtists;
 		Collection<Artist> moreArtworksSoldArtists;
@@ -56,13 +54,13 @@ public class DashboardAdminController extends AbstractController {
 		Collection<Purchaser> moreArtworksBought;
 		Collection<Artwork> mostExpensiveOnSale;
 		Integer totalPurchasers;
-		Integer totalArtists	;
+		Integer totalArtists;
 		Integer totalOnSaleArtworks;
 		Collection<Artwork> onSaleArtworks;
-		Collection<Artwork> soltArtworks;
-		Integer totalSoltArtworks;
+		Collection<Artwork> soldArtworks;
+		Integer totalsoldArtworks;
 		Integer totalOrders;
-		
+
 		highestRateArtists = artistService.findHighestRateArtists();
 		numberHighestRateArtists = artistService.findNumberHighestRateArtists();
 		moreArtworksSoldArtists = artistService.findMoreArtworksSoldArtists();
@@ -75,55 +73,110 @@ public class DashboardAdminController extends AbstractController {
 		totalPurchasers = purchaserService.findAll().size();
 		totalArtists = artistService.findAll().size();
 		totalOnSaleArtworks = artworkService.findArtworkOnSale().size();
-		soltArtworks = artworkService.findAll();
+		soldArtworks = artworkService.findAll();
 		onSaleArtworks = artworkService.findArtworkOnSale();
-		soltArtworks.removeAll(onSaleArtworks);
-		totalSoltArtworks = soltArtworks.size();
+		soldArtworks.removeAll(onSaleArtworks);
+		totalsoldArtworks = soldArtworks.size();
 		totalOrders = orderService.findAll().size();
-		
-		String out1="";
-		for(Object a:purchaserSpendMoreMoney){
-			Object[] arr = (Object[])a;
-			if(arr[0]==null){
-				out1="[]";
-			}else{
-			out1 += "Purchaser: "+arr[0].toString() +", total cost: "+ arr[1].toString()+"\n";
-			
+
+		String out1 = "";
+		for (Object a : purchaserSpendMoreMoney) {
+			Object[] arr = (Object[]) a;
+			if (arr[0] == null) {
+				out1 = "[]";
+			} else {
+				out1 += "Purchaser: " + arr[0].toString() + ", total cost: " + arr[1].toString() + "\n";
+
 			}
-		}		
-		
-		requestURI="dashboard/admin/dashboard.do";
-		
-		result = new ModelAndView("administrator/dashboard");
-		
-		result.addObject("requestURI",requestURI);
-		result.addObject("highestRateArtists",highestRateArtists);
-		result.addObject("numberHighestRateArtists",numberHighestRateArtists);
-		result.addObject("moreArtworksSoldArtists",moreArtworksSoldArtists);
-		result.addObject("numberMoreArtworksSoldArtists",numberMoreArtworksSoldArtists);
-		result.addObject("artistsEarnedMoreMoney",artistsEarnedMoreMoney);
-		result.addObject("quantityArtistEarnedMoreMoney",quantityArtistEarnedMoreMoney);
-		result.addObject("purchaserSpendMoreMoney",out1);
-		result.addObject("moreArtworksBought",moreArtworksBought);
-		result.addObject("mostExpensiveOnSale",mostExpensiveOnSale);
-		result.addObject("totalPurchasers",totalPurchasers);
-		result.addObject("totalArtists",totalArtists);
-		result.addObject("totalOnSaleArtworks",totalOnSaleArtworks);
-		result.addObject("totalSoltArtworks",totalSoltArtworks);
-		result.addObject("totalOrders",totalOrders);
-		
+		}
+
+		result = new ModelAndView("administrator/home");
+
+		result.addObject("highestRateArtists", highestRateArtists);
+		result.addObject("numberHighestRateArtists", numberHighestRateArtists);
+		result.addObject("moreArtworksSoldArtists", moreArtworksSoldArtists);
+		result.addObject("numberMoreArtworksSoldArtists", numberMoreArtworksSoldArtists);
+		result.addObject("artistsEarnedMoreMoney", artistsEarnedMoreMoney);
+		result.addObject("quantityArtistEarnedMoreMoney", quantityArtistEarnedMoreMoney);
+		result.addObject("purchaserSpendMoreMoney", out1);
+		result.addObject("moreArtworksBought", moreArtworksBought);
+		result.addObject("mostExpensiveOnSale", mostExpensiveOnSale);
+		result.addObject("totalPurchasers", totalPurchasers);
+		result.addObject("totalArtists", totalArtists);
+		result.addObject("totalOnSaleArtworks", totalOnSaleArtworks);
+		result.addObject("totalsoldArtworks", totalsoldArtworks);
+		result.addObject("totalOrders", totalOrders);
+
 		return result;
-	
+
 	}
-	
-	// Creation ---------------------------------------------------------------
 
-	// Edition------------------------------------------------------------------------
+	// Purchaser menu -----------------------------------------------
+	@RequestMapping(value = "/purchasers", method = RequestMethod.GET)
+	public ModelAndView purchasers() {
+		ModelAndView result;
 
-	// Other bussiness method
-	// ---------------------------------------------------------------
+		result = new ModelAndView("administrator/purchasers");
 
+		return result;
 
-	
+	}
+
+	// Artist menu -----------------------------------------------
+	@RequestMapping(value = "/artists", method = RequestMethod.GET)
+	public ModelAndView artists() {
+		ModelAndView result;
+
+		result = new ModelAndView("administrator/artists");
+
+		return result;
+
+	}
+
+	// On sale artworks menu -----------------------------------------------
+	@RequestMapping(value = "/onSaleArtworks", method = RequestMethod.GET)
+	public ModelAndView onSaleArtworks() {
+		ModelAndView result;
+		Collection<Artwork> onSaleArtworks;
+
+		onSaleArtworks = artworkService.findArtworkOnSale();
+
+		result = new ModelAndView("administrator/onSaleArtworks");
+
+		result.addObject("onSaleArtworks", onSaleArtworks);
+
+		return result;
+
+	}
+
+	// sold artworks menu -----------------------------------------------
+	@RequestMapping(value = "/soldArtworks", method = RequestMethod.GET)
+	public ModelAndView soldArtworks() {
+		ModelAndView result;
+		Collection<Artwork> onSaleArtworks;
+		Collection<Artwork> soldArtworks;
+
+		soldArtworks = artworkService.findAll();
+		onSaleArtworks = artworkService.findArtworkOnSale();
+		soldArtworks.removeAll(onSaleArtworks);
+
+		result = new ModelAndView("administrator/soldArtworks");
+
+		result.addObject("soldArtworks", soldArtworks);
+
+		return result;
+
+	}
+
+	// Order menu -----------------------------------------------
+	@RequestMapping(value = "/orders", method = RequestMethod.GET)
+	public ModelAndView orders() {
+		ModelAndView result;
+
+		result = new ModelAndView("administrator/orders");
+
+		return result;
+
+	}
 
 }
