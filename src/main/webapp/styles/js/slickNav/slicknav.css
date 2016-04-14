@@ -73,7 +73,7 @@
 .slicknav_nav ul {
     padding: 0px;
 	margin: 18px 10px 0;
-    background: #e96546;
+    background: #65BC54;
 }
 
 .slicknav_nav ul ul {
@@ -83,20 +83,20 @@
 }
 
 .slicknav_nav ul ul li:last-child a {
-    border-bottom: 1px solid #ef8c74;
+    border-bottom: 1px solid #47823B;
 }
 
 
 .slicknav_nav a, .slicknav_nav .slicknav_item {
     padding: 13px 10px;
     margin: 0px;
-    border-bottom: 1px solid #ef8c74;
+    border-bottom: 1px solid #47823B;
     font-size: 13px;
 
 }
 
 .slicknav_nav a:hover, .slicknav_nav .slicknav_item:hover {
-    background: #e85d3c;
+    background: #47823B;
 
 }
 
