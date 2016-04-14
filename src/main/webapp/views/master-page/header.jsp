@@ -17,44 +17,50 @@
 			<!-- Nav Menu -->
 			<div id='cssmenu'>
 				<ul>
-					<li class='has-sub active'><a href='index.html'><span>Home</span></a>
+					<li class='has-sub active'><a href=""><span><spring:message code="master.page.home" /></span></a>
 						<ul>
-						</ul></li>
-						<!--  ADMIN NAV  -->
-					<security:authorize access="hasRole('ADMINISTRATOR')">
+						</ul>
+					</li>
+				
+					<li class='has-sub active'><a href='about.do'><span><spring:message code="master.page.aboutus" /></span></a>
+						<ul>
+						</ul>
+					</li>
+					
+					<li class='has-sub'><a href="artwork/purchaser/listOnSale.do"><span><spring:message code="master.page.artworks" /></span></a>
+						<ul>
+						</ul>
+					</li>
 						
-						<li class='has-sub'><a href="#"><span><spring:message code="master.page.artworks" /></span></a>
-							<ul>
-							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.onsale" /></a></li>
-							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.sold" /></a></li>
-							</ul>
-						</li>
+					<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a>
+						<ul>
+						</ul>
+					</li>
 						
-						<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a>
-							<ul>
-							</ul>
-						</li>
-						<li class='has-sub'><a href="purchaser/administrator/list.do"><span><spring:message code="master.page.purchasers" /></span></a>
-							<ul>
-							</ul>
-						</li>
+<!-- 						 ADMIN NAV  -->
+<%-- 					<security:authorize access="hasRole('ADMINISTRATOR')"> --%>
 						
-	        		</security:authorize>
+<%-- 						<li class='has-sub'><a href="#"><span><spring:message code="master.page.artworks" /></span></a> --%>
+<!-- 							<ul> -->
+<%-- 							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.onsale" /></a></li> --%>
+<%-- 							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.sold" /></a></li> --%>
+<!-- 							</ul> -->
+<!-- 						</li> -->
+						
+<%-- 						<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a> --%>
+<!-- 							<ul> -->
+<!-- 							</ul> -->
+<!-- 						</li> -->
+<%-- 						<li class='has-sub'><a href="purchaser/administrator/list.do"><span><spring:message code="master.page.purchasers" /></span></a> --%>
+<!-- 							<ul> -->
+<!-- 							</ul> -->
+<!-- 						</li> -->
+						
+<%-- 	        		</security:authorize> --%>
 						
 
 					<!--  PURCHASER NAV  -->
 					<security:authorize access="hasRole('PURCHASER')">
-						
-						<li class='has-sub'><a href="artwork/purchaser/listOnSale.do"><span><spring:message code="master.page.artworks" /></span></a>
-							<ul>
-							</ul>
-						</li>
-						
-						<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a>
-							<ul>
-							</ul>
-						</li>
-						
 						<li class='has-sub'><a href="artwork/purchaser/listInCart.do"><span><spring:message code="master.page.purchaser.cart" /></span></a>
 							<ul>
 							</ul>
@@ -71,13 +77,19 @@
 							<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /></span></a>
 								<ul>
 									<security:authorize access="hasRole('PURCHASER')">
-										<li><a href="purchaser/edit.do?purchaserId="> <spring:message code="master.page.profile" /></a></li>
-										<li><a href="artwork/purchaser/list.do"> <spring:message code="master.page.purchaser.purchases" /></a></li>
+										<li><a href="purchaser/edit.do?purchaserId=<security:authentication property="principal.id" />"> <spring:message code="master.page.profile" /></a></li>
+										<li><a href="artwork/purchaser/list.do"> <spring:message code="master.page.purchaser.orders" /></a></li>
 										<li><a href="review/purchaser/list.do"> <spring:message code="master.page.purchaser.reviews" /></a></li>
 									</security:authorize>
-									<security:authorize access="hasRole('ADMINISTRATOR')">
-										<li><a href="dashboard/admin/dashboard.do"> <spring:message code="master.page.purchaser.purchases" /></a></li>
+									
+									<security:authorize access="hasRole('ARTIST')">
+										<li><a href="artist/edit.do?artistId=<security:authentication property="principal.id" />"> <spring:message code="master.page.profile" /></a></li>
+										<li><a href="artwork/artist/myList.do"> <spring:message code="master.page.artist.myartworks" /></a></li>
+										<li><a href="artwork/artist/create.do"> <spring:message code="master.page.artist.uploadartwork" /></a></li>
+										<li><a href="order/artist/list.do"> <spring:message code="master.page.artist.myorders" /></a></li>
+										<li><a href="reviews/artist/list.do"> <spring:message code="master.page.artist.myreviews" /></a></li>
 									</security:authorize>
+									
 									<li><a href="j_spring_security_logout"> <spring:message code="master.page.logout" /></a></li>
 							</ul></li>
 					</security:authorize>

@@ -43,10 +43,8 @@
 		<security:intercept-url pattern="/artist/edit.do" access="permitAll" />
 		<security:intercept-url pattern="/purchaser/register.do" access="permitAll" />
 		<security:intercept-url pattern="/purchaser/edit.do" access="permitAll" /> 
+		<security:intercept-url pattern="/artwork/purchaser/listOnSale.do" access="permitAll" /> 
 
-		<security:intercept-url pattern="/purchaser/admin/**" access="hasRole('ADMINISTRATOR')" /> 
-		<security:intercept-url pattern="/review/admin/**" access="hasRole('ADMINISTRATOR')" /> 
-		
 		<security:intercept-url pattern="/customer/action-1.do" access="hasRole('CUSTOMER')" /> 
 		<security:intercept-url pattern="/customer/action-2.do" access="hasRole('CUSTOMER')" /> 
 
@@ -83,7 +81,6 @@
 		<security:intercept-url pattern="/artwork/artist/edit.do" access="hasRole('ARTIST')" />
 		<security:intercept-url pattern="/artwork/artist/delete.do" access="hasRole('ARTIST')" />
 		
-		<security:intercept-url pattern="/dashboard/admin/dashboard.do" access="hasRole('ADMINISTRATOR')" />
 
 		<security:intercept-url pattern="/privacy/**" access="permitAll" /> 
 	

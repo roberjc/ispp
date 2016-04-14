@@ -156,87 +156,83 @@
 					<!-- Nav Menu -->
 					<div id='cssmenu'>
 						<ul>
-							<li class='has-sub active'><a href=''> <span> <spring:message code="master.page.home"/> </span> </a>
-								<ul>
-<!-- 									<li><a href='j_spring_security_logout'><span>Logout</span></a></li> -->
-<!-- 									<li><a href='security/login.do'><span>Login</span></a></li> -->
-								</ul></li>
-							<li class='has-sub'><a href='#'><span> <spring:message code="master.page.artworks"/></span></a>
-								<ul>
-<!-- 									<li><a href='about.html'><span>About</span></a></li> -->
-<!-- 									<li><a href='services.html'><span>Services</span></a></li> -->
-<!-- 									<li><a href='icons.html'><span>Icon Sets</span></a></li> -->
-<!-- 									<li><a href='elements.html'><span>Website -->
-<!-- 												Elements</span></a></li> -->
-<!-- 									<li><a href='typography.html'><span>Typography -->
-<!-- 												Styles</span></a></li> -->
-<!-- 									<li><a href='columns.html'><span>Column Layouts</span></a></li> -->
-<!-- 									<li><a href='404.html'><span>404 Page</span></a></li> -->
-								</ul></li>
-								
-								<!-- Login -->
-								
-								 <security:authorize access="isAnonymous()">
-									 <li class='has-sub'><a href='security/login.do'><span><span class="glyphicon glyphicon-log-in"></span> <spring:message code="master.page.login" /></span></a>
-	        					 </security:authorize>
-	        					 
-	        					 <security:authorize access="isAuthenticated()">
-								<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /></span></a>
+					<li class='has-sub active'><a href=""><span><spring:message code="master.page.home" /></span></a>
+						<ul>
+						</ul>
+					</li>
+				
+					<li class='has-sub active'><a href='about.do'><span><spring:message code="master.page.aboutus" /></span></a>
+						<ul>
+						</ul>
+					</li>
+					
+					<li class='has-sub'><a href="artwork/purchaser/listOnSale.do"><span><spring:message code="master.page.artworks" /></span></a>
+						<ul>
+						</ul>
+					</li>
+						
+					<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a>
+						<ul>
+						</ul>
+					</li>
+						
+<!-- 						 ADMIN NAV  -->
+<%-- 					<security:authorize access="hasRole('ADMINISTRATOR')"> --%>
+						
+<%-- 						<li class='has-sub'><a href="#"><span><spring:message code="master.page.artworks" /></span></a> --%>
+<!-- 							<ul> -->
+<%-- 							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.onsale" /></a></li> --%>
+<%-- 							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.sold" /></a></li> --%>
+<!-- 							</ul> -->
+<!-- 						</li> -->
+						
+<%-- 						<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a> --%>
+<!-- 							<ul> -->
+<!-- 							</ul> -->
+<!-- 						</li> -->
+<%-- 						<li class='has-sub'><a href="purchaser/administrator/list.do"><span><spring:message code="master.page.purchasers" /></span></a> --%>
+<!-- 							<ul> -->
+<!-- 							</ul> -->
+<!-- 						</li> -->
+						
+<%-- 	        		</security:authorize> --%>
+						
+
+					<!--  PURCHASER NAV  -->
+					<security:authorize access="hasRole('PURCHASER')">
+						<li class='has-sub'><a href="artwork/purchaser/listInCart.do"><span><spring:message code="master.page.purchaser.cart" /></span></a>
+							<ul>
+							</ul>
+						</li>
+	        		</security:authorize>
+						
+					<!--  Anonymous NAV  -->
+					<security:authorize access="isAnonymous()">
+	       		 		<li class='has-sub'><a href="security/login.do"><span><spring:message code="master.page.login" /></span></a>
+	        		</security:authorize>
+	        		
+	        		<!--  Authenticated NAV  -->
+					<security:authorize access="isAuthenticated()">
+							<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /></span></a>
 								<ul>
 									<security:authorize access="hasRole('PURCHASER')">
-										<li><a href="artwork/purchaser/list.do"> <spring:message code="master.page.purchaser.purchases" /></a></li>
+										<li><a href="purchaser/edit.do?purchaserId=<security:authentication property="principal.id" />"> <spring:message code="master.page.profile" /></a></li>
+										<li><a href="artwork/purchaser/list.do"> <spring:message code="master.page.purchaser.orders" /></a></li>
 										<li><a href="review/purchaser/list.do"> <spring:message code="master.page.purchaser.reviews" /></a></li>
 									</security:authorize>
-									<security:authorize access="hasRole('ADMINISTRATOR')">
-										<li><a href="dashboard/admin/dashboard.do"> <spring:message code="master.page.dashboard" /></a></li>
+									
+									<security:authorize access="hasRole('ARTIST')">
+										<li><a href="artist/edit.do?artistId=<security:authentication property="principal.id" />"> <spring:message code="master.page.profile" /></a></li>
+										<li><a href="artwork/artist/myList.do"> <spring:message code="master.page.artist.myartworks" /></a></li>
+										<li><a href="artwork/artist/create.do"> <spring:message code="master.page.artist.uploadartwork" /></a></li>
+										<li><a href="order/artist/list.do"> <spring:message code="master.page.artist.myorders" /></a></li>
+										<li><a href="reviews/artist/list.do"> <spring:message code="master.page.artist.myreviews" /></a></li>
 									</security:authorize>
-								
+									
 									<li><a href="j_spring_security_logout"> <spring:message code="master.page.logout" /></a></li>
-								</ul></li>
-								</security:authorize>
-
-							
-<!-- 								<ul> -->
-<!-- 									<li><a href='blog1.html'><span>Blog - Classic</span></a></li> -->
-<!-- 									<li><a href='blog2.html'><span>Blog - Masonry</span></a></li> -->
-<!-- 									<li><a href='blog-single.html'><span>Blog - -->
-<!-- 												Single</span></a></li> -->
-<!-- 								</ul></li> -->
-
-<!-- 							<li class='has-sub'><a href='#'><span>Portfolio</span></a> -->
-<!-- 								<ul> -->
-<!-- 									<li><a href='portfolio_01.html'><span>Portfolio -->
-<!-- 												- style 1</span></a></li> -->
-<!-- 									<li><a href='portfolio_02.html'><span>Portfolio -->
-<!-- 												- style 2</span></a></li> -->
-<!-- 									<li><a href='portfolio_03.html'><span>Portfolio -->
-<!-- 												- style 3</span></a></li> -->
-<!-- 									<li><a href='portfolio_04.html'><span>Portfolio -->
-<!-- 												- style 4</span></a></li> -->
-<!-- 									<li><a href='portfolio_fancybox.html'><span>Portfolio -->
-<!-- 												- FancyBox</span></a></li> -->
-<!-- 									<li><a href='portfolio_single_01.html'><span>Single -->
-<!-- 												Portfolio - style 1</span></a></li> -->
-<!-- 									<li><a href='portfolio_single_02.html'><span>Single -->
-<!-- 												Portfolio - style 2</span></a></li> -->
-<!-- 								</ul></li> -->
-
-<!-- 							<li class='has-sub'><a href='#'><span>Shop</span></a> -->
-<!-- 								<ul> -->
-<!-- 									<li><a href='shop_full.html'><span>Products</span></a></li> -->
-<!-- 									<li><a href='shop_w_sidebar.html'><span>Products -->
-<!-- 												w/sidebar</span></a></li> -->
-<!-- 									<li><a href='shop-product-full-width.html'><span>Single -->
-<!-- 												Product</span></a></li> -->
-<!-- 									<li><a href='shop-product-sidebar.html'><span>Single -->
-<!-- 												w/sidebar</span></a></li> -->
-<!-- 									<li><a href='shop_cart.html'><span>Cart</span></a></li> -->
-<!-- 									<li><a href='shop_checkout.html'><span>Checkout</span></a></li> -->
-<!-- 									<li><a href='shop_login.html'><span>Login</span></a></li> -->
-<!-- 								</ul></li> -->
-<!-- 							<li class='last'><a href='contact.html'><span>Contact -->
-<!-- 										Us</span></a></li> -->
-						</ul>
+							</ul></li>
+					</security:authorize>
+				</ul>
 					</div>
 				</div>
 			</div>
@@ -253,7 +249,7 @@
 				</jstl:forEach>
 			</div>
 			<div class="scroll-btns">
-				<a href="#" id="s-prev">Prev</a> | <a href="#" id="s-next">Next</a>
+				<a href="#" id="s-prev">Prev</a>  <a href="#" id="s-next">Next</a>
 			</div>
 		</div>
 		<!-- Slider1 -->

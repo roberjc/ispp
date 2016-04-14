@@ -144,7 +144,7 @@
 	</security:authorize>
 
 
-	<security:authorize access="hasRole('PURCHASER')">
+	<security:authorize access="!hasRole('ARTIST')">
 
 		<!-- Main content -->
 		<div class="page-wrap container">
