@@ -11,7 +11,7 @@
 			<!-- Logo -->
 			<h1 class="logo">
 				<a href="index.html"><img src="images/logo.png"
-					class="img-responsive" alt="img" /></a>
+					class="img-responsive" alt="img" width="150" height="150" /></a>
 			</h1>
 
 			<!-- Nav Menu -->
@@ -23,12 +23,18 @@
 						<!--  ADMIN NAV  -->
 					<security:authorize access="hasRole('ADMINISTRATOR')">
 						
-						<li class='has-sub'><a href="artwork/list.do"><span><spring:message code="master.page.artworks" /></span></a>
+						<li class='has-sub'><a href="#"><span><spring:message code="master.page.artworks" /></span></a>
 							<ul>
+							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.onsale" /></a></li>
+							<li><a href="artwork/administrator/listOnSale.do"> <spring:message code="master.page.sold" /></a></li>
 							</ul>
 						</li>
 						
 						<li class='has-sub'><a href="artist/list.do"><span><spring:message code="master.page.artist.list" /></span></a>
+							<ul>
+							</ul>
+						</li>
+						<li class='has-sub'><a href="purchaser/administrator/list.do"><span><spring:message code="master.page.purchasers" /></span></a>
 							<ul>
 							</ul>
 						</li>
@@ -65,6 +71,7 @@
 							<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /></span></a>
 								<ul>
 									<security:authorize access="hasRole('PURCHASER')">
+										<li><a href="purchaser/edit.do?purchaserId="> <spring:message code="master.page.profile" /></a></li>
 										<li><a href="artwork/purchaser/list.do"> <spring:message code="master.page.purchaser.purchases" /></a></li>
 										<li><a href="review/purchaser/list.do"> <spring:message code="master.page.purchaser.reviews" /></a></li>
 									</security:authorize>
@@ -80,6 +87,3 @@
 	</div>
 </header>
 <!-- Header -->
-<br /><br />
-
-<div class="space30"></div>
