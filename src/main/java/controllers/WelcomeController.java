@@ -11,8 +11,10 @@
 package controllers;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,7 +63,10 @@ public class WelcomeController extends AbstractController {
 		result.addObject("artworks", artworks);
 
 		if (LoginService.hasPrincipal() == true) {
-			if (LoginService.getPrincipal().getAuthorities().toArray()[0].toString().equals(Authority.PURCHASER.toString())) {
+			List<Authority> authorities = new ArrayList (LoginService.getPrincipal().getAuthorities());
+			String authority=authorities.get(0).getAuthority();
+			
+			if (authority.equals(Authority.PURCHASER.toString())) {
 				Integer amountCart = 0;
 
 				if (cartService.findMyCart().getArtworks().size() == 0)

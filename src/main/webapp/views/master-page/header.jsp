@@ -74,7 +74,7 @@
 					<!--  PURCHASER NAV  -->
 					<security:authorize access="hasRole('PURCHASER')">
 						<li class='last'><a href="artwork/purchaser/listInCart.do"><span><spring:message
-										code="master.page.purchaser.cart" />(<jstl:out value="${cart.artworks.size()}"></jstl:out>)</span></a></li>
+										code="master.page.purchaser.cart" />(<jstl:out value="${amountCart}"></jstl:out>)</span></a></li>
 					</security:authorize>
 
 					<!--  Anonymous NAV  -->
