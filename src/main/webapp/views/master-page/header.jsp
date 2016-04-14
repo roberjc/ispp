@@ -79,7 +79,7 @@
 					<!--  Anonymous NAV  -->
 					<security:authorize access="isAnonymous()">
 						<li class='last'><a href="security/login.do"><span><spring:message
-										code="master.page.login" /> <i class="icon-enter5"></i></span></a>
+										code="master.page.login" /> <i class="icon-enter3"></i></span></a>
 					</security:authorize>
 
 					<!--  Authenticated NAV  -->

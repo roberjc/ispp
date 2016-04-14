@@ -21,46 +21,44 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<display:table name="artworks" id="row" pagesize="5"
-	requestURI="${requestURI}" class="displaytag">
+<div class="page-wrap container contact-wrap">
+	<div class="container">
+		<div class="col-md-12 no-padding columns">
+			<div class="row">
 
-	<acme:displayColumn code="artwork.purchaser.title" property="title"/>
-	<acme:displayColumn code="artwork.purchaser.description" property="description" />
-	<acme:displayColumn code="artwork.purchaser.discipline" property="discipline"/>
-	<acme:displayColumn code="artwork.purchaser.height" property="height" />
-	<acme:displayColumn code="artwork.purchaser.width" property="width"/>
-	<acme:displayColumn code="artwork.purchaser.moment" property="moment" />
-</display:table>
+				<div class="table-responsive">
+					<display:table name="artists" id="row" requestURI="${requestURI}"
+						pagesize="5"
+						class="table table-hover table-striped table-condensed">
 
-<display:table name="artists" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag"> 
+						<display:column property="name" titleKey="artist.name" />
 
-	<display:column property="name" titleKey="artist.name"/> 
-	
-	<display:column property="surname" titleKey="artist.surname"/> 	
-		
-	
-	<spring:message var="artistRatingHeader" code="artist.rating" />
-	<display:column  title="${artistRatingHeader}" sortable="rating">
-	
-		
-		<jstl:choose>
-			<jstl:when test="${row.reviews.size() == 0}">
-			
-		<spring:message  code="artist.review.not.reviewed" />
-			</jstl:when>
-			<jstl:otherwise>
-	<jstl:out value="${row.rating}" />			
-	</jstl:otherwise>
-		</jstl:choose>
-		
-		
-	</display:column>
-	
-		<display:column titleKey="artist.artworks">
-			<a href="artwork/listByArtist.do?artistId=${row.id}"> <spring:message code="artist.artworks"/> </a>
-	</display:column>
-	
-	
-</display:table>
+						<display:column property="surname" titleKey="artist.surname" />
 
-<acme:cancel url="${cancelURI }" code="artist.back" />
+
+						<spring:message var="artistRatingHeader" code="artist.rating" />
+						<display:column title="${artistRatingHeader}" sortable="rating">
+
+							<jstl:choose>
+								<jstl:when test="${row.reviews.size() == 0}">
+
+									<spring:message code="artist.review.not.reviewed" />
+								</jstl:when>
+								<jstl:otherwise>
+									<jstl:out value="${row.rating}" />
+								</jstl:otherwise>
+							</jstl:choose>
+
+						</display:column>
+
+						<display:column titleKey="artist.artworks">
+							<a href="artwork/listByArtist.do?artistId=${row.id}"> <spring:message
+									code="artist.artworks" />
+							</a>
+						</display:column>
+					</display:table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

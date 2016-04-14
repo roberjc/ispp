@@ -17,13 +17,13 @@
 	content="Chemistry - Responsive Muti-Purpose Portfolio Template">
 <meta name="author" content="">
 
-<title>Chemistry - Responsive Muti-Purpose Portfolio Template</title>
+<title>tazú</title>
 
 <!-- Mobile Meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 
 <!-- Google Webfonts -->
 <link
@@ -158,7 +158,7 @@
 							<!--  Anonymous NAV  -->
 							<security:authorize access="isAnonymous()">
 								<li class='last'><a href="security/login.do"><span><spring:message
-												code="master.page.login" /> <i class="icon-enter5"></i></span></a>
+												code="master.page.login" /> <i class="icon-enter3"></i></span></a>
 							</security:authorize>
 
 							<!--  Authenticated NAV  -->
