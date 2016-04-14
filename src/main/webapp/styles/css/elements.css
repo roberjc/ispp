@@ -34,7 +34,7 @@ padding:0px !important;
 .space100 { margin-bottom:100px;}
 
 .btn-orange {
-background:#e96546;
+background:#65BC54;
 }
 
 .btn-orange-lite {
@@ -108,7 +108,7 @@ position:relative;
 }
 
 .panel-body {
-background:#e96546;
+background:#65BC54;
 color:#fff;
 padding:0px 20px 15px;
 border:none !important;
@@ -116,11 +116,11 @@ border:none !important;
 
 
 .panel-heading .accordion-toggle {
-    background: #e96546;
+    background: #65BC54;
     padding: 12px 20px;
 display: table;
 width: 100%;
-border:1px solid #e96546;
+border:1px solid #65BC54;
 color:#fff;
 }
 

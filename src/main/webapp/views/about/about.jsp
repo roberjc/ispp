@@ -53,9 +53,9 @@
 					<h6>
 						<em>Project Manager</em>
 					</h6>
-					<p><a target="target" href="mailto:framacgar1@alum.us.es"><i class="fa fa-envelope-o"></i> framacgar1@alum.us.es</a></p>
+					<p><a target="target" href="mailto:framacgar2@alum.us.es"><i class="fa fa-envelope-o"></i> framacgar2@alum.us.es</a></p>
 					<p><a target="target" href="https://github.com/roberjc"><i class="icon-github3"></i> roberjc</a></p>
-					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Roberto Jiménez Castillo</a></p>
+					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Francisco José Macías García</a></p>
 					<br />
 					<br />
 					<br />
@@ -72,7 +72,7 @@
 					</h6>
 					<p><a target="target" href="mailto:vlaricheb@alum.us.es"><i class="fa fa-envelope-o"></i> vlaricheb@alum.us.es</a></p>
 					<p><a target="target" href="https://github.com/roberjc"><i class="icon-github3"></i> roberjc</a></p>
-					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Roberto Jiménez Castillo</a></p>
+					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Vladimir Rico Hebles</a></p>
 					<br />
 					<br />
 					<br />
@@ -89,7 +89,7 @@
 					</h6>
 					<p><a target="target" href="mailto:juagarfer4@alum.us.es"><i class="fa fa-envelope-o"></i> juagarfer4@alum.us.es</a></p>
 					<p><a target="target" href="https://github.com/roberjc"><i class="icon-github3"></i> roberjc</a></p>
-					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Roberto Jiménez Castillo</a></p>
+					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Juan García-Quismondo Fdez.</a></p>
 					<br />
 					<br />
 					<br />
@@ -125,7 +125,7 @@
 					</h6>
 					<p><a target="target" href="mailto:alfmencha@alum.us.es"><i class="fa fa-envelope-o"></i> alfmencha@alum.us.es</a></p>
 					<p><a target="target" href="https://github.com/roberjc"><i class="icon-github3"></i> roberjc</a></p>
-					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Roberto Jiménez Castillo</a></p>
+					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Alfredo Menéndez Charlo</a></p>
 					<br />
 					<br />
 					<br />
@@ -143,7 +143,7 @@
 					</h6>
 					<p><a target="target" href="mailto:rubramver@alum.us.es"><i class="fa fa-envelope-o"></i> rubramver@alum.us.es</a></p>
 					<p><a target="target" href="https://github.com/roberjc"><i class="icon-github3"></i> roberjc</a></p>
-					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Roberto Jiménez Castillo</a></p>
+					<p><a target="target" href="https://es.linkedin.com/in/roberto-jiménez-5150a5b6"><i class="fa fa-linkedin"></i> Rubén Ramírez Vera</a></p>
 					<br />
 					<br />
 					<br />

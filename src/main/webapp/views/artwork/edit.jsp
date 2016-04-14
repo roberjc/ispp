@@ -51,13 +51,9 @@
 
 						<div class="row">
 							<div class="col-md-6">
-
 								<acme:textbox code="artwork.title" path="title" />
-
 								<acme:textbox code="artwork.discipline" path="discipline" />
-
 								<acme:textbox code="artwork.tags.edit" path="tags" />
-
 							</div>
 							<div class="col-md-6">
 								<acme:textbox code="artwork.heigth" path="height"
@@ -79,7 +75,7 @@
 						<form:input path="picture" id="picture" type="file" />
 						<form:errors path="picture" cssClass="error" />
 						<button type="submit" id="sendMessage" name="save"
-							class="btn btn-primary btn-sm btn-orange uppercase pull-right">
+							class="btn btn-primary btn-green uppercase pull-right">
 							<spring:message code="artwork.save"></spring:message>
 						</button>
 					</form:form>

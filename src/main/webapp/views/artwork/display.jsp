@@ -11,7 +11,7 @@
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<script language="Javascript">
+<script>
 	document.oncontextmenu = function() {
 		return false
 	}
@@ -52,8 +52,10 @@
 										path="${artwork.price}" /></span>
 							</p>
 							<div class="space20"></div>
-							<p class="taller"><acme:out code="artwork.description"
-										path="${artwork.description}" /></p>
+							<p class="taller">
+								<acme:out code="artwork.description"
+									path="${artwork.description}" />
+							</p>
 							<div class="space50"></div>
 
 							<security:authorize access="hasRole('PURCHASER')">

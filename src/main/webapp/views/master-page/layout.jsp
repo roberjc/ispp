@@ -97,16 +97,19 @@
 	<!-- Si la página en la que se encuentra no es el índice, muestra el header por defecto -->
 
 	<div class="body">
-		<jstl:if test="${req != '//views/misc/index.jsp'}">
+		<jstl:if
+			test="${req != '//views/misc/index.jsp' && req != '/dashboard/admin/dashboard.do'}">
 			<div class="top-wrap">
 				<div class="overlay-bg"></div>
 				<tiles:insertAttribute name="header" />
 			</div>
 		</jstl:if>
 
-		<jstl:if test="${req != '//views/misc/index.jsp'}">
-			<div  class="page-wrap container shop-form-wrap">
-			<br /><br />
+		<jstl:if
+			test="${req != '//views/misc/index.jsp' && req != '/dashboard/admin/dashboard.do'}">
+			<div class="page-wrap container shop-form-wrap">
+				<br />
+				<br />
 				<h3>
 					<tiles:insertAttribute name="title" />
 				</h3>
@@ -120,7 +123,9 @@
 			<span class="message"><spring:message code="${message}" /></span>
 		</jstl:if>
 
-		<tiles:insertAttribute name="footer" />
+		<jstl:if test="${req != '/dashboard/admin/dashboard.do'}">
+			<tiles:insertAttribute name="footer" />
+		</jstl:if>
 	</div>
 
 	<!-- JavaScript -->

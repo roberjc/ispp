@@ -14,6 +14,7 @@ import domain.Artwork;
 import domain.Purchaser;
 import services.ArtistService;
 import services.ArtworkService;
+import services.OrderService;
 import services.PurchaserService;
 
 @Controller
@@ -29,6 +30,9 @@ public class DashboardAdminController extends AbstractController {
 	
 	@Autowired
 	private ArtworkService artworkService;
+	
+	@Autowired
+	private OrderService orderService;
 
 	// Constructors -----------------------------------------------------------
 	public DashboardAdminController() {
@@ -51,6 +55,13 @@ public class DashboardAdminController extends AbstractController {
 		Collection<Object> purchaserSpendMoreMoney;
 		Collection<Purchaser> moreArtworksBought;
 		Collection<Artwork> mostExpensiveOnSale;
+		Integer totalPurchasers;
+		Integer totalArtists	;
+		Integer totalOnSaleArtworks;
+		Collection<Artwork> onSaleArtworks;
+		Collection<Artwork> soltArtworks;
+		Integer totalSoltArtworks;
+		Integer totalOrders;
 		
 		highestRateArtists = artistService.findHighestRateArtists();
 		numberHighestRateArtists = artistService.findNumberHighestRateArtists();
@@ -61,6 +72,14 @@ public class DashboardAdminController extends AbstractController {
 		purchaserSpendMoreMoney = purchaserService.findPurchaserSpendMoreMoney();
 		moreArtworksBought = purchaserService.findPurchaserMoreArtworkBought();
 		mostExpensiveOnSale = artworkService.findMostExpensiveOnSale();
+		totalPurchasers = purchaserService.findAll().size();
+		totalArtists = artistService.findAll().size();
+		totalOnSaleArtworks = artworkService.findArtworkOnSale().size();
+		soltArtworks = artworkService.findAll();
+		onSaleArtworks = artworkService.findArtworkOnSale();
+		soltArtworks.removeAll(onSaleArtworks);
+		totalSoltArtworks = soltArtworks.size();
+		totalOrders = orderService.findAll().size();
 		
 		String out1="";
 		for(Object a:purchaserSpendMoreMoney){
@@ -71,19 +90,9 @@ public class DashboardAdminController extends AbstractController {
 			out1 += "Purchaser: "+arr[0].toString() +", total cost: "+ arr[1].toString()+"\n";
 			
 			}
-			
 		}		
 		
-	
-		
-		
-		
-		
-		
 		requestURI="dashboard/admin/dashboard.do";
-				
-		
-		
 		
 		result = new ModelAndView("administrator/dashboard");
 		
@@ -97,6 +106,11 @@ public class DashboardAdminController extends AbstractController {
 		result.addObject("purchaserSpendMoreMoney",out1);
 		result.addObject("moreArtworksBought",moreArtworksBought);
 		result.addObject("mostExpensiveOnSale",mostExpensiveOnSale);
+		result.addObject("totalPurchasers",totalPurchasers);
+		result.addObject("totalArtists",totalArtists);
+		result.addObject("totalOnSaleArtworks",totalOnSaleArtworks);
+		result.addObject("totalSoltArtworks",totalSoltArtworks);
+		result.addObject("totalOrders",totalOrders);
 		
 		return result;
 	
