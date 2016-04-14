@@ -208,13 +208,13 @@
 						
 					<!--  Anonymous NAV  -->
 					<security:authorize access="isAnonymous()">
-	       		 		<li class='has-sub'><a href="security/login.do"><span><spring:message code="master.page.login" /></span></a>
+	       		 		<li class='has-sub'><a href="security/login.do"><span><spring:message code="master.page.login" /> <i class="icon-enter5"></i></span></a>
 	        		</security:authorize>
 	        		
 	        		<!--  Authenticated NAV  -->
 					<security:authorize access="isAuthenticated()">
-							<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /></span></a>
-								<ul>
+						<li class='has-sub'><a href='#'><span><security:authentication property="principal.username" /> <i class="icon-user2"></i></span></a>
+									<ul>
 									<security:authorize access="hasRole('PURCHASER')">
 										<li><a href="purchaser/edit.do?purchaserId=<security:authentication property="principal.id" />"> <spring:message code="master.page.profile" /></a></li>
 										<li><a href="artwork/purchaser/list.do"> <spring:message code="master.page.purchaser.orders" /></a></li>
@@ -229,7 +229,7 @@
 										<li><a href="reviews/artist/list.do"> <spring:message code="master.page.artist.myreviews" /></a></li>
 									</security:authorize>
 									
-									<li><a href="j_spring_security_logout"> <spring:message code="master.page.logout" /></a></li>
+									<li><a href="j_spring_security_logout"><spring:message code="master.page.logout" /> <i class="icon-exit3"></i></a></li>
 							</ul></li>
 					</security:authorize>
 				</ul>
