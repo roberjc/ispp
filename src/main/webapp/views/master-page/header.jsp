@@ -11,7 +11,7 @@
 
 	<!-- STYLES -->
 	<div id="stylesBox">
-		<a href="#" class="contact"></a>
+		<a class="contact"></a>
 		<div class="stylesBack">
 			<p>
 				<spring:message code="master.page.chooseLanguage" />
@@ -74,7 +74,7 @@
 					<!--  PURCHASER NAV  -->
 					<security:authorize access="hasRole('PURCHASER')">
 						<li class='last'><a href="artwork/purchaser/listInCart.do"><span><spring:message
-										code="master.page.purchaser.cart" />(<jstl:out value="${amountCart}"></jstl:out>)</span></a></li>
+										code="master.page.purchaser.cart" />(<jstl:out value="${cookie.cartAmount.value}"></jstl:out>)</span></a></li>
 					</security:authorize>
 
 					<!--  Anonymous NAV  -->
@@ -85,7 +85,7 @@
 
 					<!--  Authenticated NAV  -->
 					<security:authorize access="isAuthenticated()">
-						<li class='has-sub'><a href='#'><span><security:authentication
+						<li class='has-sub'><a><span><security:authentication
 										property="principal.username" /> <i class="icon-user"></i></span></a>
 							<ul>
 								<security:authorize access="hasRole('PURCHASER')">
@@ -93,7 +93,7 @@
 										href="purchaser/edit.do?purchaserId=<security:authentication property="principal.id" />">
 											<spring:message code="master.page.profile" />
 									</a></li>
-									<li><a href="artwork/purchaser/list.do"> <spring:message
+									<li><a href="order/purchaser/list.do"> <spring:message
 												code="master.page.purchaser.orders" /></a></li>
 									<li><a href="review/purchaser/list.do"> <spring:message
 												code="master.page.purchaser.reviews" /></a></li>
@@ -115,7 +115,7 @@
 								</security:authorize>
 
 								<li><a href="j_spring_security_logout"> <spring:message
-											code="master.page.logout" /> <i class="icon-exit3"></i></a></li>
+											code="master.page.logout" /> <i class="icon-exit"></i></a></li>
 							</ul></li>
 					</security:authorize>
 

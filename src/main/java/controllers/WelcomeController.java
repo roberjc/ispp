@@ -16,7 +16,11 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,34 +51,54 @@ public class WelcomeController extends AbstractController {
 	// Index ------------------------------------------------------------------
 
 	@RequestMapping(value = "/index")
-	public ModelAndView index(@RequestParam(required = false, defaultValue = "John Doe") String name) {
+	public ModelAndView index(HttpServletResponse response) {
 		ModelAndView result;
-		SimpleDateFormat formatter;
-		String moment;
 		Collection<Artwork> artworks;
 
-		formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-		moment = formatter.format(new Date());
 		artworks = artworkService.findArtworkOnSale();
 
 		result = new ModelAndView("welcome/index");
-		result.addObject("name", name);
-		result.addObject("moment", moment);
 		result.addObject("artworks", artworks);
 
+		// if (LoginService.hasPrincipal() == true) {
+		// List<Authority> authorities = new ArrayList
+		// (LoginService.getPrincipal().getAuthorities());
+		// String authority=authorities.get(0).getAuthority();
+		//
+		// if (authority.equals(Authority.PURCHASER.toString())) {
+		// Integer amountCart = 0;
+		//
+		// if (cartService.findMyCart().getArtworks().size() == 0)
+		// result.addObject("amountCart", 0);
+		// else {
+		// amountCart = cartService.findMyCart().getArtworks().size();
+		// result.addObject("amountCart", amountCart);
+		// }
+		// }
+		// }
+
 		if (LoginService.hasPrincipal() == true) {
-			List<Authority> authorities = new ArrayList (LoginService.getPrincipal().getAuthorities());
-			String authority=authorities.get(0).getAuthority();
-			
+			List<Authority> authorities = new ArrayList(LoginService.getPrincipal().getAuthorities());
+			String authority = authorities.get(0).getAuthority();
+
 			if (authority.equals(Authority.PURCHASER.toString())) {
-				Integer amountCart = 0;
+//				Integer amountCart = 0;
+				Cookie cartAmountCookie;
 
 				if (cartService.findMyCart().getArtworks().size() == 0)
-					result.addObject("amountCart", 0);
+					// result.addObject("amountCart", 0);
+					cartAmountCookie = new Cookie("cartAmount", "0");
 				else {
-					amountCart = cartService.findMyCart().getArtworks().size();
-					result.addObject("amountCart", amountCart);
+					// amountCart =
+					// cartService.findMyCart().getArtworks().size();
+					// result.addObject("amountCart", amountCart);
+					cartAmountCookie = new Cookie("cartAmount",
+							new Integer(cartService.findMyCart().getArtworks().size()).toString());
+
 				}
+				cartAmountCookie.setMaxAge(60 * 60 * 24 * 365);
+				response.addCookie(cartAmountCookie);
+
 			}
 		}
 

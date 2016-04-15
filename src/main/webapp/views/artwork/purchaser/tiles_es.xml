@@ -31,4 +31,9 @@
 		<put-attribute name="body" value="/views/artwork/list.jsp" />
 	</definition>
 	
+	<definition name="artwork/purchaser/header" extends="master.page">	
+		<put-attribute name="title" value="" />
+		<put-attribute name="body" value="/views/master-page/header.jsp" />
+	</definition>
+	
 </tiles-definitions>

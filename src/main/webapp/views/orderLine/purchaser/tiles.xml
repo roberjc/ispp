@@ -18,7 +18,7 @@
 
 
 	<definition name="orderLine/purchaser/list" extends="master.page">	
-		<put-attribute name="title" value="Order lines" />
+		<put-attribute name="title" value="Order's details" />
 		<put-attribute name="body" value="/views/orderLine/purchaser/list.jsp" />
 	</definition>
 	
