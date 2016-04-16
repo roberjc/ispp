@@ -31,6 +31,7 @@
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/tazu" />
+<!-- 		<property name="jdbcUrl" value="jdbc:mysql://node29138-grupo88.cloud.hostnet.nl/tazu" /> -->
 		<property name="user" value="acme-user" />
 		<property name="password" value="ACME-Us3r-P@ssw0rd" />
 	</bean>

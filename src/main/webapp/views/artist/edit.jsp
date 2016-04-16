@@ -27,7 +27,6 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="toggle-content">
-						<form>
 							<div class="row">
 								<div class="form-group">
 									<div class="col-md-12">
@@ -121,7 +120,6 @@
 									</div>
 								</div>
 							</div>
-						</form>
 					</div>
 					<!-- end of first -->
 					<div class="space40"></div>

@@ -24,7 +24,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
-@Table(name="orderr")
+@Table(name="Orderr")
 public class Order extends DomainEntity{
 	
 	// Constructors ------------------

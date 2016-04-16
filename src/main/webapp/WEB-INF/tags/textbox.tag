@@ -42,12 +42,12 @@
 	</form:label>
 	<form:input path="${path}" readonly="${readonly}"
 		cssClass="${cssClass}" placeholder="${placeholder}" />
-		
-		<spring:bind path="${path}">
-	<jstl:if test="${not empty status.errorMessages}">
-		<div class="alert alert-danger">
-			<form:errors path="title"></form:errors>
-		</div>
-	</jstl:if>
+
+	<spring:bind path="${path}">
+		<jstl:if test="${not empty status.errorMessages}">
+			<div class="alert alert-danger">
+				<form:errors path="${path}"></form:errors>
+			</div>
+		</jstl:if>
 	</spring:bind>
 </div>
